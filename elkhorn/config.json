@@ -4,8 +4,8 @@
    "s3": {
     "bucket": "nyt-stage",
     "region": "us-east-1",
-    "accessKeyId": "AKIAIDM5M5CRDKHMZVPQ",
-    "secretAccessKey": "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"
+    "accessKeyId": "",
+    "secretAccessKey": ""
   }
 
 }

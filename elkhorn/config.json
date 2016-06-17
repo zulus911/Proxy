@@ -1,0 +1,11 @@
+{
+ "pillarHost": "http://10.0.1.195:8080",
+ "basicAuthorization": "Basic NmQ3MmU2ZGQtOTNkMC00NDEzLTliNGMtODU0NmQ0ZDM1MTRlOlBDeVgvTFRHWjhOdGZWOGVReXZObkpydm4xc2loQk9uQW5TNFpGZGNFdnc9",
+   "s3": {
+    "bucket": "nyt-stage",
+    "region": "us-east-1",
+    "accessKeyId": "AKIAIDM5M5CRDKHMZVPQ",
+    "secretAccessKey": "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"
+  }
+
+}

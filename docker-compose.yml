@@ -121,6 +121,7 @@ services:
       - pillarapp:pillar
       - xeniaapp:xenia
       - cayapp:cay
+      - elkhorn:elkhorn
     ports:
       - "8080:80"
       - "443:443"

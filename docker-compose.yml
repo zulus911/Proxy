@@ -10,6 +10,8 @@ services:
       - "MONGO_DB=${MONGO_DB}"
     volumes:
       - /mongodata:/data/db
+    ports:
+      - "27017"
 
   rabbitmq:
     image: rabbitmq:management
@@ -37,6 +39,8 @@ services:
         - "XENIA_QUERY_PARAM=?skip=0&limit=100"
         - "XENIA_AUTH=<auth token>"
         - "AMQP_URL=amqp://${RABBIT_USER}:${RABBIT_PASS}@rabbitmq:5672/"
+    ports: 
+     - "8080"
     links:
       - mongodata
       - rabbitmq
@@ -44,6 +48,8 @@ services:
   atollapp:
     image: coralproject/atoll
     restart: always
+    ports:
+      - "8181"
     links:
       - mongodata
 
@@ -62,6 +68,8 @@ services:
       - "XENIA_UPDATE_QUERY=${XENIA_UPDATE_QUERY}"
       - "XENIA_DATABASE_SCHEMA_PATH=${XENIA_DATABASE_SCHEMA_PATH}"
       - "XENIA_QUERY_UPSERT_PATH=${XENIA_QUERY_UPSERT_PATH}"
+    ports:
+      - "4000"
     links:
       - mongodata
 
@@ -75,6 +83,8 @@ services:
        - "PROJECT=Coral Project"
        - "GAID=${GAID_VALUE}"
        - "AUTH_TOKEN=${AUTH_TOKEN_VALUE}"
+    ports:
+      - "80:80"
     links:
       - pillarapp
       - xeniaapp
@@ -83,6 +93,8 @@ services:
   elkhorn:
     image: coralproject/elkhorn
     restart: always
+    ports:
+      - "4444:4444"
     volumes:
       - ./elkhorn/config.json:/usr/src/app/config.json
     links:

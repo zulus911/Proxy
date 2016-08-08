@@ -1,0 +1,5 @@
+use coral
+db.createUser( { user: "coral1",
+                 pwd: "coral1",
+                 roles: [ "readWrite" ] }
+)
